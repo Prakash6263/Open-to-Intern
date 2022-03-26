@@ -129,4 +129,4 @@ Refer below sample
 
 
 <!-- logolink=https://functionup-stg.s3.ap-south-1.amazonaws.com/thorium/svce.png -->
-<!-- logolink=    "logoLink":"https://functionup-stg.s3.ap-south-1.amazonaws.com/thorium/rgpvbhopal.png" -->
+<!-- "logoLink":"https://functionup-stg.s3.ap-south-1.amazonaws.com/thorium/rgpvbhopal.png" -->

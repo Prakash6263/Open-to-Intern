@@ -1,4 +1,4 @@
-const collegeModel = require('../models/collegeModel');
+ const collegeModel = require('../models/collegeModel');
 
 //---------------------------Validation Functions---------------------------------------------------------
 
@@ -18,7 +18,7 @@ const createCollege = async function (req, res) {
             return res.status(400).send({ status: false, message: 'Invalid request parameters. Please provide collage details' })
         }
         let { name, fullName, logoLink } = req.body
-        console.log(req.body)
+        // console.log(req.body)
 
         if (!isValid(name)) {
             res.status(400).send({ status: false, message: `name is required` })
@@ -26,7 +26,7 @@ const createCollege = async function (req, res) {
         }
 
         let Collegedata = await collegeModel.findOne({ name, isDeleted: false })
-        console.log(Collegedata)
+        // console.log(Collegedata)
         if (Collegedata) return res.status(400).send({ status: false, msg: `${name} already exist` })
 
         if (!isValid(fullName)) {
@@ -34,7 +34,7 @@ const createCollege = async function (req, res) {
             return
         }
         let Collegefullname = await collegeModel.findOne({ fullName, isDeleted: false })
-        console.log(Collegefullname)
+        // console.log(Collegefullname)
         if (Collegefullname) return res.status(400).send({ status: false, msg: `${fullName} already exist` })
 
         if (!isValid(logoLink)) {
@@ -42,7 +42,7 @@ const createCollege = async function (req, res) {
             return
         }
         let CollegeLogo = await collegeModel.findOne({ logoLink, isDeleted: false })
-        console.log(CollegeLogo)
+        // console.log(CollegeLogo)
         if (CollegeLogo) return res.status(400).send({ status: false, msg: `${logoLink} already exist` })
 
         if (!(/(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-/]))?/.test(logoLink))) {
